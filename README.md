@@ -1,20 +1,6 @@
 # Detection Transformers(DETR) finetuning
 
-El conjunto de datos utilizado es un subconjunto de [**Open Images V6**](https://storage.googleapis.com/openimages/web/index.html) que contiene 300 imágenes de pandas rojos y 300 de ratones.
-
-
-Para descargar las imágenes de Open Images V6 hay que instalar: 
-```{bash}
-pip install oidv6
-``` 
-Para descargar las imágenes hay que ejecutar por consola el oidv6, indicando la carpeta donde descargar las imágenes, la clase o clases a descargar y el limite de imágenes. Las instrucciones de uso se encuentran en el Github de [DmitryRyumin](https://github.com/DmitryRyumin/OIDv6). En nuestro caso se ejecutó:
-```{bash}
-oidv6 downloader en --dataset TransformerDataset\ --type_data train --classes "Red panda" --limit 300 --yes
-oidv6 downloader en --dataset TransformerDataset\ --type_data train --classes "Mouse" --limit 300 --yes
-```
-
-Las imágenes descargadas contienen las etiquetas en un txt por imagen, por lo que se realizará las trasformaciones necesarias para guardarlas todas en un archivo csv y poder utilizarlas como conjunto de entrenamiento. Ver Notebook  Labels to CSV DataFrame ().
-
+## Requisitos
 Para esta práctica se estará usando Jupyter notebook desde un entorno de Anaconda, por lo que realizaremos las instalaciones de todo lo necesario por la consola de Anaconda (Anaconda prompt), por ejemplo para instalar la libería extra de pythorch llamada vision: https://github.com/pytorch/vision.
 ```{bash}
 conda install torchvision -c pytorch 
@@ -35,3 +21,25 @@ Por lo tanto utilizaremos git, para clonar el repositorio desde github a nuestro
 ```{bash}
 git clone https://github.com/facebookresearch/detr.git 
 ``` 
+
+## Dataset 
+El conjunto de datos utilizado es un subconjunto de [**Open Images V6**](https://storage.googleapis.com/openimages/web/index.html) que contiene 300 imágenes de pandas rojos y 300 de ratones.
+
+Para descargar las imágenes de Open Images V6 hay que instalar: 
+```{bash}
+pip install oidv6
+``` 
+Para descargar las imágenes hay que ejecutar por consola el oidv6, indicando la carpeta donde descargar las imágenes, la clase o clases a descargar y el limite de imágenes. Las instrucciones de uso se encuentran en el Github de [DmitryRyumin](https://github.com/DmitryRyumin/OIDv6). En nuestro caso se ejecutó:
+```{bash}
+oidv6 downloader en --dataset TransformerDataset\ --type_data train --classes "Red panda" --limit 300 --yes
+oidv6 downloader en --dataset TransformerDataset\ --type_data train --classes "Mouse" --limit 300 --yes
+```
+
+Ejemplo de las imágenes utilizadas:  
+
+<img src="images/0cc39456fec6be62.jpg" width="350">    <img src="images/1e17e29e0e1256fc.jpg" width="380">
+<img src="images/00e4465db2995332.jpg" width="350">    <img src="images/0c1b4aa584f6fa21.jpg" width="315">
+
+Las imágenes descargadas contienen las etiquetas en un txt por imagen, por lo que se realizará las trasformaciones necesarias para guardarlas todas en un archivo csv y poder utilizarlas como conjunto de entrenamiento. Ver Notebook  [Labels to CSV DataFrame](https://github.com/Crisyaki/finetune-detr/blob/main/Labels%20to%20CSV%20DataFrame.ipynb).
+
+
