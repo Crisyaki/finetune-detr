@@ -1,5 +1,12 @@
 # Detection Transformers(DETR) finetuning
 
+[Este repositorio de Github](https://github.com/Crisyaki/finetune-detr) se centra en reentrenar un modelo de redes neuronales con la arquitectura DETR realizando un finetuning a partir de la implementación de [Facebook](https://github.com/facebookresearch/detr) y cargando los pesos ya entrenados. Para ello se utilizaron de los siquientes archivos:
++ **1. Labels to CSV DataFrame** -> Jupyter Notebook con las transformaciones de las anotaciones en txt a CSV para usarlas en el Notebook 2.
++ **2. End to End Object Detection with Transformers - Finetune DETR** -> Jupyter Notebook con los pasos detallados de una semi-implementacion de DETR para detección de objetos a partir de un conjunto de imágenes con las anotaciones en CSV. 
++ **3. Another finetune DETR** -> Jupyter Notebook con un entrenamiento de DETR a partir de un framework ya implementado y los pesos originales de facebook. 
++ **_annotations_coco.json** -> Archivo JSON con las anataciones en formato COCO del Dataset utilizado, se generó utilizando [Roboflow](https://app.roboflow.com/) a partir de los txt descargados. Este archivo unicamente se usa para el 3º Notebook
+
+
 ## DETR arquitectura
 
 DETR también llamado DEtection TRansformer, considera la detección de objetos como un problema estimaciones de conjuntos. No utiliza técnicas como la non-maximum suppression (NMS), ya que, fuerza predicciones únicas a través de un emparejamiento bipartito (bipartite matching). Este aprende sobre las relaciones de los objetos y el contexto de la imagen global para generar directamente el conjunto final de predicciones.
@@ -74,6 +81,7 @@ Ejemplo de las imágenes utilizadas:
 <img src="images/0cc39456fec6be62.jpg" width="350">    <img src="images/1e17e29e0e1256fc.jpg" width="380">
 <img src="images/00e4465db2995332.jpg" width="350">    <img src="images/0c1b4aa584f6fa21.jpg" width="315">
 
-Las imágenes descargadas contienen las etiquetas en un txt por imagen, por lo que se realizará las trasformaciones necesarias para guardarlas todas en un archivo csv y poder utilizarlas como conjunto de entrenamiento. Ver Notebook  [Labels to CSV DataFrame](https://github.com/Crisyaki/finetune-detr/blob/main/Labels%20to%20CSV%20DataFrame.ipynb).
+Las imágenes descargadas contienen las etiquetas en un txt por imagen, por lo que se realizará las trasformaciones necesarias para guardarlas todas en un archivo csv y poder utilizarlas como conjunto de entrenamiento para el 2º Notebook del repositorio. Ver Notebook  [Labels to CSV DataFrame](https://github.com/Crisyaki/finetune-detr/blob/main/Labels%20to%20CSV%20DataFrame.ipynb). Para el 3º Notebook descrito en la parte de arriba unicamente se utilizarán las imágenes con el archivo json. 
+
 
 
