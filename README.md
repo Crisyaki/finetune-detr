@@ -83,5 +83,8 @@ Ejemplo de las imágenes utilizadas:
 
 Las imágenes descargadas contienen las etiquetas en un txt por imagen, por lo que se realizará las trasformaciones necesarias para guardarlas todas en un archivo csv y poder utilizarlas como conjunto de entrenamiento para el 2º Notebook del repositorio. Ver Notebook  [Labels to CSV DataFrame](https://github.com/Crisyaki/finetune-detr/blob/main/Labels%20to%20CSV%20DataFrame.ipynb). Para el 3º Notebook descrito en la parte de arriba unicamente se utilizarán las imágenes con el archivo json. 
 
-
+## Ejemplos de resultados obtenidos
+A continuación podemos observar algunos de los resultados obtenidos con el Notebook 2. 
+<img src="images/resultados1.png" width="800">
+<img src="images/resultados2.png" width="800">
 
